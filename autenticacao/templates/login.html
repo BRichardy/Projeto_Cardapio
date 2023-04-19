@@ -19,21 +19,12 @@
                         </div>
                     {% endfor %}
                 {% endif %}
-                <h2>Cadastro</h2>
+                <h2>Login</h2>
 
                 <hr>
                 <form method='POST' action=' {% url 'cadastro' %} ' class="justify-content-md-center"> {% csrf_token %}
-                    <p><input type="text" class="form-control w-100" name="nome" placeholder="Usuário" required></p>
                     <p><input type="text" class="form-control w-100" name="email" placeholder= "E-mail" required></p>
                     <p><input type="text" class="form-control w-100" name="senha" placeholder="Senha" required></p>
-                  <div class="col-12">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-                      <label class="form-check-label" for="invalidCheck2">
-                        Agree to terms and conditions
-                      </label>
-                    </div>
-                  </div>
                   <div class="col-12 justify-content-md-center">
                     <button class="btn btn-primary" type="submit">Enviar</button>
                   </div>
@@ -41,8 +32,6 @@
             </div>
 
         </div>
-
-
 
     </div>
 </div>
