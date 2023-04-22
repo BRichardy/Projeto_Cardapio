@@ -2,7 +2,7 @@
 {% load static %}
 {% block 'title' %}Cadastro{% endblock 'title' %}
 {% block 'head' %}
-
+    <link rel="stylesheet" href="{% static 'css/geral.css' %}">
 {% endblock 'head' %}
 
 {% block 'body' %}
@@ -22,12 +22,12 @@
                 <h2>Login</h2>
 
                 <hr>
-                <form method='POST' action=' {% url 'cadastro' %} ' class="justify-content-md-center"> {% csrf_token %}
-                    <p><input type="text" class="form-control w-100" name="email" placeholder= "E-mail" required></p>
-                    <p><input type="text" class="form-control w-100" name="senha" placeholder="Senha" required></p>
-                  <div class="col-12 justify-content-md-center">
+                <form method='POST' action=' {% url 'login' %} ' class="justify-content-md-center"> {% csrf_token %}
+                    <p><input type="text" class="form-control w-100" name="nome" placeholder= "E-mail" required></p>
+                    <p><input type="password" class="form-control w-100" name="senha" placeholder="Senha"  required></p>
+                <div class="col-12 justify-content-md-center">
                     <button class="btn btn-primary" type="submit">Enviar</button>
-                  </div>
+                </div>
                 </form>
             </div>
 

@@ -1,0 +1,29 @@
+.bg-side{
+    background-color: #74777a;
+    color: white;
+    height: 100vh;
+}
+
+/layout side bar/
+.sidebar{
+    text-align: center;
+    padding: 10px;
+    padding-top: 25px;
+ 
+}
+
+
+.wrapper {
+    margin-top: 3%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    padding:20px;
+    width: 50vw;
+    background: rgb(238, 238, 238);
+    box-shadow: 4px 4px 10px rgba(0,0,0,.3);
+}

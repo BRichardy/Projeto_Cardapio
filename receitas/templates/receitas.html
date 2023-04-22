@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'title' %}Receitas{% endblock 'title' %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/gerenciar_receitas.css' %}">
+{% endblock head %}
+
+{% block 'body' %}
+    <h1>Receitas</h1>
+
+    <div class="container">
+        <br>
+        <table>
+            <tr>
+                <th>Foto</th>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Ingredientes</th>
+            </tr>
+            
+            {% for receita in receitas %}
+            <tr>
+                <td width="10%"><a href='{% url 'edit_receitas' receita.id %}'><img width="100%" src="/media/{{receita.foto_prato}}"></a></td>
+                <td>{{receita.preco0}}</td>
+                <td>{{receita.nome_prato}}</td>
+                <td>{{receita.categoria}}</td>
+                <td>{{receita.ingredientes}}</td>
+            </tr>
+            {% endfor %}
+                
+        </table>
+
+    </div>
+
+{% endblock 'body' %}

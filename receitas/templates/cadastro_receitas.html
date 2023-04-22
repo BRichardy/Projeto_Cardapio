@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'title' %} Nova Prato {% endblock 'title' %}
+
+{% block 'head' %}   
+    <link rel="stylesheet" href="{% static 'css/cadastro_receitas.css' %}">
+{% endblock 'head' %}
+
+{% block 'body' %}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md">
+                <div class="wrapper">
+                    <div class="box">
+                        <div class="header-box">
+                            <h4>Cadastro de Novo Prato</h4>
+                            <hr>                              
+                        </div>
+                        <div class="body-box">
+                            <form action=" {% url 'cadastro_receitas' %}" method="POST" enctype='multipart/form-data'>{% csrf_token %}
+                                <div class='row'>
+                                    <div class="col-my">
+                                        <span>Foto:<span>
+                                        <input type="file" name="foto_prato" class="form-control">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-md">
+                                        <span>Nome:<span>
+                                        <input type="text" class="form-control" name="nome_prato" placeholder="Digite o nome do pet...">
+                                    </div>
+                                    <br>
+                                    <div class="col-md">
+                                        <span>Categoria:<span>
+                                        <input type="text" class="form-control" name="categoria" placeholder="Digite a categoria...">
+                                    </div>
+                                    <br>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md">
+                                        <span>Ingredientes</span>
+                                        <textarea class="form-control" name="ingredientes" placeholder="Ingredientes..." ></textarea>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-md">
+                                        <span>Preço 01:</span>
+                                        <input type="number" min="1" name="preco0" step="any" placeholder="R$" />                                    
+                                    </div>
+                                    <div class="col-md">
+                                        <span>Preço 02:</span>
+                                        <input type="number" min="0" name="preco1" step="any" placeholder="R$" />                                     
+                                    </div>
+                                    <div class="col-md">
+                                        <span>Preço 03:</span>
+                                        <input type="number" min="0" name="preco2" step="any" placeholder="R$" />                                     
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md">
+                                            <input type="submit" class="btn-principal" value="Criar Receitas">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock 'body' %}
